@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
   extend Mobility
-  translates :title
+  translates :title, locale_accessors: [:en, :he]
 end

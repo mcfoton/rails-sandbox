@@ -7,8 +7,12 @@ module Sandbox
     resource :posts do
       desc 'Return all posts'
       get do
+        post = Post.new
+        post.title_he = 'HE'
+        post.title_en = 'EN'
+
         I18n.with_locale(params[:locale]) do
-          present Post.all
+          present post
         end
       end
     end
